@@ -1,9 +1,7 @@
 class DataSource {
   static globalReports() {
     return fetch(`https://covid19.mathdro.id/api/`)
-      .then((response) => {
-        return response.json();
-      })
+      .then((response) => response.json())
       .then((responseJson) => {
         if (responseJson) {
           return Promise.resolve(responseJson);
@@ -18,9 +16,7 @@ class DataSource {
     return fetch(
       `https://covid19.mathdro.id/api/countries/${keyword}/confirmed`
     )
-      .then((response) => {
-        return response.json();
-      })
+      .then((response) => response.json())
       .then((responseJson) => {
         if (responseJson) {
           if (responseJson[0].countryRegion) {
